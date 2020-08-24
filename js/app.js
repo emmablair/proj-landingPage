@@ -43,6 +43,10 @@ const sections = document.querySelectorAll('section');
 for (section of sections) {
     const list = document.createElement('li');
     const link = document.createElement('a');
+    list.addEventListener('click', function() {
+        let active = document.querySelector('your-active-class');
+        
+    })
     link.classList.add('menu__link');
     link.innerText = section.dataset.nav;
     list.appendChild(link);
