@@ -43,10 +43,9 @@ const sections = document.querySelectorAll('section');
 for (section of sections) {
     const list = document.createElement('li');
     const link = document.createElement('a');
-    list.addEventListener('click', function() {
-        let active = document.querySelector('your-active-class');
-        
-    })
+    link.addEventListener('click', () => {
+        link.classList.add('your-active-class')
+    });
     link.classList.add('menu__link');
     link.innerText = section.dataset.nav;
     list.appendChild(link);
@@ -54,7 +53,11 @@ for (section of sections) {
     fragment.appendChild(list);
 }
 navList.appendChild(fragment)
+
+
 // Add class 'active' to section when near top of viewport
+const landing = document.querySelectorAll('.landing__container')
+
 
 
 // Scroll to anchor ID using scrollTO event
