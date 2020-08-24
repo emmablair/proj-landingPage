@@ -43,8 +43,9 @@ const sections = document.querySelectorAll('section');
 for (section of sections) {
     const list = document.createElement('li');
     const link = document.createElement('a');
+    link.classList.add('menu__link');
+    link.innerText = section.dataset.nav;
     list.appendChild(link);
-    list.innerText = `Section ${i}`;
 
     fragment.appendChild(list);
 }
