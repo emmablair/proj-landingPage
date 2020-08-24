@@ -43,9 +43,11 @@ const sections = document.querySelectorAll('section');
 for (section of sections) {
     const list = document.createElement('li');
     const link = document.createElement('a');
+    // Active link highlighted when 'clicked'
     link.addEventListener('click', () => {
         link.classList.add('your-active-class')
     });
+    // 
     link.classList.add('menu__link');
     link.innerText = section.dataset.nav;
     list.appendChild(link);
