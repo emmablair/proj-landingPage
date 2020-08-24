@@ -38,8 +38,9 @@ const headTitle = document.querySelector('.main__hero');
 
 // build the nav
 const fragment = new DocumentFragment();
+const sections = document.querySelectorAll('section');
 
-for (let i = 1; i <= 3; i++) {
+for (section of sections) {
     const list = document.createElement('li');
     const link = document.createElement('a');
     list.appendChild(link);
