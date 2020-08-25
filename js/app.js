@@ -57,14 +57,14 @@ const ulList = document.querySelectorAll('ul#navbar__list > li a');
 // Loop Highlights selected menu section 
 for (let i = 0; i < ulList.length; i++) {
     ulList[i].addEventListener('click', (event) => {
-        if (event.currentTarget.classList.contains('your-active-class')){
+        if (event.currentTarget.classList.contains('active')){
             // Stays active
         } else {
             // becomes active & removes all other active sections
             for (let k = 0; k< ulList.length; k++) {
-                ulList[k].classList.remove('your-active-class');
+                ulList[k].classList.remove('active');
             }
-            event.currentTarget.classList.add('your-active-class');
+            event.currentTarget.classList.add('active');
         }
     })    
 };
