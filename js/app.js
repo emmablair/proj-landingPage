@@ -45,7 +45,7 @@ for (section of sections) {
     const link = document.createElement('a');
     // Active link highlighted when 'clicked'
     link.addEventListener('click', () => {
-        link.classList.add('your-active-class')
+        link.classList.toggle('your-active-class')
     });
     // 
     link.classList.add('menu__link');
