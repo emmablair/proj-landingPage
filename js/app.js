@@ -45,18 +45,22 @@ for (section of sections) {
     const link = document.createElement('a');
     link.classList.add('menu__link');
     link.innerText = section.dataset.nav;
-    for (let i = 0; i < sections.length; i++) {
-        link.href = `#section${i + 1}`;
-    }
     list.appendChild(link);
 
     fragment.appendChild(list);
 }
 navList.appendChild(fragment)
 
+// all 'a' in nav
+const ulList = document.querySelectorAll('ul#navbar__list > li a');
+// nav jump to section
+for (section of sections) {
+    for (let i = 0; i < sections.length; i++) {
+        ulList[i].href = `#section${i + 1}`;
+    }
+}
 
 // Active Nav sections
-const ulList = document.querySelectorAll('ul#navbar__list > li a');
 // Loop Highlights selected menu section 
 for (let i = 0; i < ulList.length; i++) {
     ulList[i].addEventListener('click', (event) => {
