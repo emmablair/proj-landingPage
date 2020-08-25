@@ -45,6 +45,9 @@ for (section of sections) {
     const link = document.createElement('a');
     link.classList.add('menu__link');
     link.innerText = section.dataset.nav;
+    for (let i = 0; i < sections.length; i++) {
+        link.href = `#section${i + 1}`;
+    }
     list.appendChild(link);
 
     fragment.appendChild(list);
