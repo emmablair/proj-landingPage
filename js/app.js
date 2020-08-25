@@ -43,11 +43,6 @@ const sections = document.querySelectorAll('section');
 for (section of sections) {
     const list = document.createElement('li');
     const link = document.createElement('a');
-    // Active link highlighted when 'clicked'
-    link.addEventListener('click', () => {
-        link.classList.toggle('your-active-class')
-    });
-    // 
     link.classList.add('menu__link');
     link.innerText = section.dataset.nav;
     list.appendChild(link);
@@ -57,12 +52,35 @@ for (section of sections) {
 navList.appendChild(fragment)
 
 
-// Add class 'active' to section when near top of viewport
-const landing = document.querySelectorAll('.landing__container')
+// Active Nav sections
+const ulList = document.querySelectorAll('ul#navbar__list > li a');
+// Loop Highlights selected menu section 
+for (let i = 0; i < ulList.length; i++) {
+    ulList[i].addEventListener('click', (event) => {
+        if (event.currentTarget.classList.contains('your-active-class')){
+            // Stays active
+        } else {
+            // becomes active & removes all other active sections
+            for (let k = 0; k< ulList.length; k++) {
+                ulList[k].classList.remove('your-active-class');
+            }
+            event.currentTarget.classList.add('your-active-class');
+        }
+    })    
+};
 
+
+// Add class 'active' to section when near top of viewport
+
+
+
+// const landing = document.querySelectorAll('.landing__container')
 
 
 // Scroll to anchor ID using scrollTO event
+
+
+
 
 
 /**
