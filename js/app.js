@@ -28,6 +28,16 @@ const headTitle = document.querySelector('.main__hero');
  * 
 */
 
+// Check/return viewport function >>>
+const inViewport = (element) => {
+    const bounding = element.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innnerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
 
 
 /**
@@ -53,12 +63,14 @@ navList.appendChild(fragment)
 
 // all 'a' in nav
 const ulList = document.querySelectorAll('ul#navbar__list > li a');
-// nav jump to section
+// Scroll to section on link click
 for (section of sections) {
     for (let i = 0; i < sections.length; i++) {
         ulList[i].href = `#section${i + 1}`;
     }
 }
+
+
 
 // Active Nav sections
 // Loop Highlights selected menu section 
@@ -77,7 +89,17 @@ for (let i = 0; i < ulList.length; i++) {
 };
 
 
-// Add class 'active' to section when near top of viewport
+for (section of sections) {
+    window.addEventListener('scroll', (event) => {
+        sections.currentTarget.classList.add('active');
+        if (inViewport(sections)) {
+            
+            console.log('WHAT A VIEW');
+        } else {
+            sections.currentTarget.classList.remove('active');     
+        };
+    });
+};
 
 
 
