@@ -28,17 +28,6 @@ const headTitle = document.querySelector('.main__hero');
  * 
 */
 
-// Check/return viewport function >>>
-const inViewport = (element) => {
-    const bounding = element.getBoundingClientRect();
-    return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <= (window.innnerHeight || document.documentElement.clientHeight) &&
-        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-};
-
 
 /**
  * End Helper Functions
