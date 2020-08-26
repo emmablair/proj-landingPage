@@ -52,13 +52,14 @@ navList.appendChild(fragment)
 
 // all 'a' in nav
 const ulList = document.querySelectorAll('ul#navbar__list > li a');
-// Add href section ID to links && corresponding section IDs to links
+// Add href section ID to links
 for (section of sections) {
     for (let i = 0; i < sections.length; i++) {
         ulList[i].href = `#section${i + 1}`;   
     }
 }
 
+// corresponding section IDs added to links
 for (section of sections) {
     for (let i = 0; i < sections.length; i++) {
         ulList[i].classList.add(`section${i + 1}`)
@@ -70,13 +71,12 @@ function makeActive() {
     for (const section of sections) {
       const view = section.getBoundingClientRect();
       const id = section.getAttribute("id");
-      // You can play with the values in the "if" condition to further make it more accurate. 
       if (view.top <= 150 && view.bottom >= 150) {
-        // Apply active state on the current section and the corresponding Nav link.
+        // active section & nav
         section.classList.add('active');
         document.querySelector(`.${id}`).classList.add("active");
       } else {
-        // Remove active state from other section and corresponding Nav link.
+        // remove active from section and nav
         section.classList.remove('active');
         document.querySelector(`.${id}`).classList.remove("active");
       }
@@ -90,7 +90,7 @@ document.addEventListener("scroll", function() {
 
 
 
-// Active Nav sections
+// Active Nav sections when CLICK
 // Loop Highlights selected menu section 
 for (let i = 0; i < ulList.length; i++) {
     ulList[i].addEventListener('click', (event) => {
