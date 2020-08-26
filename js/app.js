@@ -63,12 +63,41 @@ navList.appendChild(fragment)
 
 // all 'a' in nav
 const ulList = document.querySelectorAll('ul#navbar__list > li a');
-// Scroll to section on link click
+// Add href section ID to links && corresponding section IDs to links
 for (section of sections) {
     for (let i = 0; i < sections.length; i++) {
-        ulList[i].href = `#section${i + 1}`;
+        ulList[i].href = `#section${i + 1}`;   
     }
 }
+
+for (section of sections) {
+    for (let i = 0; i < sections.length; i++) {
+        ulList[i].classList.add(`section${i + 1}`)
+    }
+};
+
+
+function makeActive() {
+    for (const section of sections) {
+      const view = section.getBoundingClientRect();
+      const id = section.getAttribute("id");
+      // You can play with the values in the "if" condition to further make it more accurate. 
+      if (view.top <= 150 && view.bottom >= 150) {
+        // Apply active state on the current section and the corresponding Nav link.
+        section.classList.add('active');
+        document.querySelector(`.${id}`).classList.add("active");
+      } else {
+        // Remove active state from other section and corresponding Nav link.
+        section.classList.remove('active');
+        document.querySelector(`.${id}`).classList.remove("active");
+      }
+    }
+  };
+
+
+document.addEventListener("scroll", function() {
+  makeActive();
+});
 
 
 
@@ -89,17 +118,6 @@ for (let i = 0; i < ulList.length; i++) {
 };
 
 
-for (section of sections) {
-    window.addEventListener('scroll', (event) => {
-        sections.currentTarget.classList.add('active');
-        if (inViewport(sections)) {
-            
-            console.log('WHAT A VIEW');
-        } else {
-            sections.currentTarget.classList.remove('active');     
-        };
-    });
-};
 
 
 
