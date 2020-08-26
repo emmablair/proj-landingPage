@@ -52,33 +52,29 @@ navList.appendChild(fragment)
 
 // all 'a' in nav
 const ulList = document.querySelectorAll('ul#navbar__list > li a');
-// Add href section ID to links
-for (section of sections) {
+// Add href section ID && corresponding section IDs added to links
+for (list of ulList) {
     for (let i = 0; i < sections.length; i++) {
         ulList[i].href = `#section${i + 1}`;   
     }
-}
-
-// corresponding section IDs added to links
-for (section of sections) {
     for (let i = 0; i < sections.length; i++) {
-        ulList[i].classList.add(`section${i + 1}`)
+        ulList[i].classList.add(`section${i + 1}`);
     }
-};
+}
 
 
 function makeActive() {
     for (const section of sections) {
-      const view = section.getBoundingClientRect();
-      const id = section.getAttribute("id");
-      if (view.top <= 150 && view.bottom >= 150) {
-        // active section & nav
-        section.classList.add('active');
-        document.querySelector(`.${id}`).classList.add("active");
-      } else {
-        // remove active from section and nav
-        section.classList.remove('active');
-        document.querySelector(`.${id}`).classList.remove("active");
+        const view = section.getBoundingClientRect();
+        const id = section.getAttribute('id');
+        if (view.top <= 150 && view.bottom >= 150) {
+            // active section & nav
+            section.classList.add('active');
+            document.querySelector(`.${id}`).classList.add("active");
+        } else {
+            // remove active from section and nav
+            section.classList.remove('active');
+            document.querySelector(`.${id}`).classList.remove("active");
       }
     }
   };
@@ -89,24 +85,18 @@ document.addEventListener("scroll", function() {
 });
 
 
-
-// Active Nav sections when CLICK
-// Loop Highlights selected menu section 
-for (let i = 0; i < ulList.length; i++) {
-    ulList[i].addEventListener('click', (event) => {
+for (const list of ulList) {
+   list.addEventListener('click', (event) => {
         if (event.currentTarget.classList.contains('active')){
             // Stays active
         } else {
             // becomes active & removes all other active sections
-            for (let k = 0; k< ulList.length; k++) {
-                ulList[k].classList.remove('active');
-            }
+            list.classList.remove('active');
             event.currentTarget.classList.add('active');
         }
-    })    
-};
+    })
 
-
+}
 
 
 
