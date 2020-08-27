@@ -2,8 +2,8 @@
  *
  * CSS written based on SMACSS architecture.
  * To learn more, visit: http://smacss.com/
- * 
- * For simplicity, no reset or normalize is added. 
+ *
+ * For simplicity, no reset or normalize is added.
  * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
  *
 */
@@ -15,31 +15,45 @@ html {
 }
 
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: linear-gradient(rgb(67, 7, 107) 0%, rgb(31, 51, 126) 40%, rgba(0,13,60,1) 100%);
     margin: 0;
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
     color: #fff;
+    overflow-x: hidden;
 }
 
 
 /* Typeography General*/
 h1 {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Poiret One', cursive;
+    text-shadow: rgb(165, 165, 165) 1px 0 20px;
     font-size: 3em;
+    text-align: center;
     margin: 2em 1rem;
 }
 
+nav {
+    background-color: rgb(0, 0, 0);
+    font-family: 'Poiret One', cursive;
+    font-size: 1.1em;
+}
+
+
 @media only screen and (min-width: 35em){
+.burger {
+    display: none;
+}
+
     h1 {
-        font-size: 7em;
-        margin: 2em 4rem 1em;
+        font-size: 10em;
+        margin: 2em 4rem 2em;
     }
 }
 
 h2 {
-    border-bottom: 1px solid #cc1;
-    font-family: 'Oxygen', Sans-Serif;
+    border-bottom: 2px solid white;
+    font-family: 'Poiret One', cursive;
+    text-shadow: rgb(165, 165, 165) 1px 0 20px;
     font-size: 3em;
     color: #fff;
 }
@@ -47,6 +61,7 @@ h2 {
 p {
     line-height: 1.6em;
     color: #eee;
+    font-size: 2vh;
 }
 
 /* ---- Layout Rules ---- */
@@ -68,6 +83,7 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -76,7 +92,7 @@ section {
 
 .navbar__menu li {
     display: inline-block;
-    color: black;
+    color: white;
 }
 
 .navbar__menu .menu__link {
@@ -84,18 +100,18 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background: rgb(119, 44, 97);
     color: #fff;
     transition: ease 0.3s all;
 }
 
 .menu__link.active {
     color: rgb(255, 255, 255);
-    background: #333;   
+    background: rgb(119, 44, 97);
 }
 
 .navbar__menu .menu__link {
@@ -104,7 +120,7 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    /* background: #fff; */
     position: fixed;
     top: 0;
     width: 100%;
@@ -140,7 +156,7 @@ section {
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
-    text-align: right; 
+    text-align: right;
 }
 
 /* Background Circles */
@@ -206,8 +222,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
-/* Note: active class is applied through javascript. 
-You should update the class here and in the index.html 
+/* Note: active class is applied through javascript.
+You should update the class here and in the index.html
 to what you set in your javascript file.  */
 section.active {
     background: rgb(0, 0, 0);
@@ -224,6 +240,55 @@ section.active .landing__container::after {
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
+
+@media only screen and (max-width: 35em){
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+        text-align: right;
+    }
+    
+    .navList {
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        /* padding: 1em; */
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        background-color: rgba(0, 0, 0, 0.61);
+    }
+    
+    .menu__link {
+        font-size: 1em;
+    }
+    
+    /* .navbar__menu li {
+        background-color: black;
+    } */
+    
+    .burger {
+        display: inline-block;
+        margin: 3px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .nav__active {
+        transform: translateX(0%);
+    }
+    
+    }
+    
+
+
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
 	from {
@@ -233,7 +298,7 @@ section.active .landing__container::after {
 	}
 	to {
 		transform: rotate(360deg)
-		           translate(-1em) 
+		           translate(-1em)
 		           rotate(-360deg);
 	}
 }

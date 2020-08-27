@@ -67,7 +67,7 @@ function makeActive() {
     for (const section of sections) {
         const view = section.getBoundingClientRect();
         const id = section.getAttribute('id');
-        if (view.top <= 150 && view.bottom >= 150) {
+        if (view.top <= 500 && view.bottom >= 500) {
             // active section & nav
             section.classList.add('active');
             document.querySelector(`.${id}`).classList.add("active");
@@ -98,7 +98,18 @@ for (const list of ulList) {
 
 }
 
+// MOBILE hambrger menu
 
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.navList');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav__active');
+    });
+}
+
+navSlide();
 
 // const landing = document.querySelectorAll('.landing__container')
 
