@@ -13,29 +13,17 @@
  * 
 */
 
-/**
- * Define Global Variables
- * 
-*/
+// Define Global Variables
+
 const pageHeader = document.querySelector('.page__header');
 const navMenu = document.querySelector('.navbar__menu');
 const navList = document.querySelector('#navbar__list');
 const headTitle = document.querySelector('.main__hero');
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
 
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
 
 // build the nav
+
 const fragment = new DocumentFragment();
 const sections = document.querySelectorAll('section');
 
@@ -50,6 +38,7 @@ for (section of sections) {
 }
 navList.appendChild(fragment)
 
+
 // all 'a' in nav
 const ulList = document.querySelectorAll('ul#navbar__list > li a');
 // Add href section ID && corresponding section IDs added to links
@@ -62,6 +51,8 @@ for (list of ulList) {
     }
 }
 
+
+// Nav links active and highlighted on Scroll
 
 function makeActive() {
     for (const section of sections) {
@@ -85,6 +76,8 @@ document.addEventListener("scroll", function() {
 });
 
 
+// Nav links active when Clicked
+
 for (const list of ulList) {
    list.addEventListener('click', (event) => {
         if (event.currentTarget.classList.contains('active')){
@@ -98,7 +91,11 @@ for (const list of ulList) {
 
 }
 
-// MOBILE hambrger menu
+
+
+
+
+// MOBILE hamburger menu
 
 const navSlide = () => {
     const burger = document.querySelector('.burger');
