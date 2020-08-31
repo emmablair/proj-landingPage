@@ -38,21 +38,26 @@ nav {
     font-size: 1.1em;
 }
 
-button {
-    color: rgb(255, 255, 255);
-    background: rgb(119, 44, 97);
-    border: none;
-    padding: 15px;
-    box-shadow: rgb(165, 165, 165) 1px 0 10px;
-    border-radius: .5em;
+.material-icons {
+    font-size: 4em;
+    text-align: center;
 }
 
-button > a {
-    color: white;
-    font-family: 'Poiret One', cursive;
-    text-decoration: none;
-    font-size: 1.5em;
+#scrollToTop {
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background: rgb(119, 44, 97);
+    box-shadow: rgb(165, 165, 165) 1px 0 10px;
     text-shadow: rgb(165, 165, 165) 1px 0 20px;
+    border: none;
+    opacity: 80%;
+    cursor: pointer;
 }
 
 .home {
@@ -63,6 +68,7 @@ button > a {
     text-decoration: none;
     color: white;
     letter-spacing: .5em;
+    cursor: pointer;
 }
 
 .home:hover {
@@ -161,7 +167,6 @@ section {
 
 /* Header Styles */
 .page__header {
-    /* background: #fff; */
     position: fixed;
     top: 0;
     width: 100%;

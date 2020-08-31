@@ -22,7 +22,7 @@ const headTitle = document.querySelector('.main__hero');
 
 
 
-// build the nav
+// Dynamic Nav
 
 const fragment = new DocumentFragment();
 const sections = document.querySelectorAll('section');
@@ -54,63 +54,81 @@ for (list of ulList) {
 
 // Nav links active and highlighted on Scroll
 
-function makeActive() {
-    for (const section of sections) {
-        const view = section.getBoundingClientRect();
-        const id = section.getAttribute('id');
-        if (view.top <= 500 && view.bottom >= 500) {
-            // active section & nav
-            section.classList.add('active');
-            document.querySelector(`.${id}`).classList.add("active");
-        } else {
-            // remove active from section and nav
-            section.classList.remove('active');
-            document.querySelector(`.${id}`).classList.remove("active");
-      }
+function activeScroll() {
+    document.addEventListener("scroll", function() {
+        for (const section of sections) {
+            const view = section.getBoundingClientRect();
+            const id = section.getAttribute('id');
+            if (view.top <= 500 && view.bottom >= 500) {
+                // active section & nav
+                section.classList.add('active');
+                document.querySelector(`.${id}`).classList.add("active");
+            } else {
+                // remove active from section and nav
+                section.classList.remove('active');
+                document.querySelector(`.${id}`).classList.remove("active");
+          }
+        }
+      })
     }
-  };
 
-
-document.addEventListener("scroll", function() {
-  makeActive();
-});
+activeScroll();
 
 
 // Nav links active when Clicked
 
-for (const list of ulList) {
-   list.addEventListener('click', (event) => {
-        if (event.currentTarget.classList.contains('active')){
-            // Stays active
-        } else {
-            // becomes active & removes all other active sections
-            list.classList.remove('active');
-            event.currentTarget.classList.add('active');
-        }
-    })
-
+function activeClick() {
+    for (const list of ulList) {
+        list.addEventListener('click', (event) => {
+             if (event.currentTarget.classList.contains('active')){
+                 // Stays active
+             } else {
+                 // becomes active & removes all other active sections
+                 list.classList.remove('active');
+                 event.currentTarget.classList.add('active');
+             }
+         })
+     
+     }
 }
 
-
-// const landing = document.querySelectorAll('.landing__container')
-
-
-// Scroll to anchor ID using scrollTO event
+activeClick();
 
 
+// Scroll to Top
+
+function backToTop() {
+    const toTopButton = document.querySelector('#scrollToTop');
+    const home = document.querySelector('.home');
+    document.addEventListener('scroll', (event) => {  
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+            toTopButton.style.display = 'block';
+        } else {
+            toTopButton.style.display = 'none';
+        }
+    })
+    toTopButton.addEventListener('click', (event) => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    })
+    home.addEventListener('click', (event) => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    })
+}
+
+backToTop();
 
 
+// MOBILE hamburger menu => signs.html only
 
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
+function navSlide() {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.navList');
 
-// Build menu 
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav__active');
+    });
+}
 
-// Scroll to section on link click
-
-// Set sections as active
-
-
+navSlide();
