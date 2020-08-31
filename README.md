@@ -3,8 +3,6 @@
 ## Table of Contents
 
 * [Description](#Description)
-* [Languages](#Languages)
-* [Features](#Features)
 
 ## Description
 
@@ -12,12 +10,12 @@ Javascipt focused project for Udacity's Front End program. Project's design is o
 
 ## Languages
 
-*JavaScript
-*HTML
-*CSS
+* JavaScript
+* HTML
+* CSS
 
 ## Features
 
-*dynamic navigation
-*scroll to effect
-*active states
+* dynamic navigation
+* scroll to effect
+* active states
