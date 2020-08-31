@@ -3,6 +3,8 @@
 ## Table of Contents
 
 * [Description](#Description)
+* [Languages](#Languages)
+* [Features](#Features)
 
 ## Description
 
