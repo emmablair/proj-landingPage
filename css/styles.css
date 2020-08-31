@@ -123,6 +123,8 @@ section {
 
 /* Navigation Styles*/
 
+
+
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -175,6 +177,7 @@ section {
 
 .page__footer p{
     color: #fff;
+    font-size: 1em;
 }
 
 

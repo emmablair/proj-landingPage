@@ -2,12 +2,20 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Description](#Description)
 
-## Instructions
+## Description
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Javascipt focused project for Udacity's Front End program. Project's design is of a Zodiac Sign website. The goal is to create a dynamic landing page with JavaScript. All links are working.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Languages
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+*JavaScript
+*HTML
+*CSS
+
+## Features
+
+*dynamic navigation
+*scroll to effect
+*active states
