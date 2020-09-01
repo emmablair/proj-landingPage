@@ -1,5 +1,7 @@
 # Landing Page Project
 
+## [Project Link](https://emmablair.github.io/zodiac-landingPage/)
+
 ## Table of Contents
 
 * [Description](#Description)
@@ -22,5 +24,3 @@ Javascipt focused project for Udacity's Front End program. Project's design is o
 * scroll to effect
 * back to top event
 * active states
-
-## [Project Link](https://emmablair.github.io/zodiac-landingPage/)
