@@ -120,7 +120,7 @@ function backToTop() {
 backToTop();
 
 
-// MOBILE hamburger menu => signs.html only
+// MOBILE hamburger menu
 
 function navSlide() {
     const burger = document.querySelector('.burger');
