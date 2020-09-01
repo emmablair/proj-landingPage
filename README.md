@@ -23,4 +23,4 @@ Javascipt focused project for Udacity's Front End program. Project's design is o
 * back to top event
 * active states
 
-[Project Link](https://emmablair.github.io/zodiac-landingPage/)
+[## Project Link](https://emmablair.github.io/zodiac-landingPage/)
